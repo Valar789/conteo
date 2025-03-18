@@ -51,7 +51,9 @@ export default function ProductList({
 
   const handleDelete = (code: number) => {
     onDeleteProduct(code);
-    toast.success("Producto eliminado exitosamente");
+    toast.success("Producto eliminado exitosamente", {
+      position: "bottom-left",
+    });
   };
 
   if (products.length === 0) {
@@ -71,7 +73,7 @@ export default function ProductList({
               className="py-3 px-4 text-left font-medium text-sm cursor-pointer hover:text-zinc-600 dark:hover:text-zinc-300"
               onClick={() => handleSort("code")}
             >
-              Code
+              Código
               {sortField === "code" && (
                 <span className="inline-block ml-1">
                   {sortDirection === "asc" ? (
@@ -112,7 +114,7 @@ export default function ProductList({
               className="py-3 px-4 text-left font-medium text-sm cursor-pointer hover:text-zinc-600 dark:hover:text-zinc-300"
               onClick={() => handleSort("name")}
             >
-              Name
+              Nombre
               {sortField === "name" && (
                 <span className="inline-block ml-1">
                   {sortDirection === "asc" ? (
@@ -153,10 +155,10 @@ export default function ProductList({
               Descripción
             </th>
             <th
-              className="py-3 px-4 text-left font-medium text-sm cursor-pointer hover:text-zinc-600 dark:hover:text-zinc-300"
+              className="py-3 px-4 text-center font-medium text-sm cursor-pointer hover:text-zinc-600 dark:hover:text-zinc-300"
               onClick={() => handleSort("quantity")}
             >
-              Quantity
+              Cantidad
               {sortField === "quantity" && (
                 <span className="inline-block ml-1">
                   {sortDirection === "asc" ? (
@@ -197,7 +199,7 @@ export default function ProductList({
               className="py-3 px-4 text-left font-medium text-sm cursor-pointer hover:text-zinc-600 dark:hover:text-zinc-300"
               onClick={() => handleSort("creation")}
             >
-              Creation Date
+              Fecha de creación
               {sortField === "creation" && (
                 <span className="inline-block ml-1">
                   {sortDirection === "asc" ? (
@@ -234,7 +236,7 @@ export default function ProductList({
                 </span>
               )}
             </th>
-            <th className="py-3 px-4 text-left font-medium text-sm">
+            <th className="py-3 px-4 text-center font-medium text-sm">
               Acciones
             </th>
           </tr>
@@ -250,16 +252,16 @@ export default function ProductList({
               <td className="py-3 px-4">
                 <div className="max-w-xs truncate">{product.description}</div>
               </td>
-              <td className="py-3 px-4">{product.quantity}</td>
+              <td className="py-3 px-4 text-center">{product.quantity}</td>
               <td className="py-3 px-4">
                 {product.creation instanceof Date
                   ? format(product.creation, "dd/MM/yyyy")
                   : format(new Date(product.creation), "dd/MM/yyyy")}
               </td>
-              <td className="py-3 px-4">
+              <td className="py-3 px-4 flex justify-center">
                 <button
                   onClick={() => handleDelete(product.code)}
-                  className="text-red-500 hover:text-red-700 focus:outline-none"
+                  className="text-red-500  hover:text-red-700 focus:outline-none"
                   aria-label="Delete product"
                 >
                   <svg
