@@ -1,19 +1,8 @@
-"use client";
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Home() {
-  const router = useRouter();
-
-  useEffect(() => {
-    const redirectTimer = setTimeout(() => {
-      router.push("/products");
-    }, 10000);
-    return () => clearTimeout(redirectTimer);
-  }, [router]);
-
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-8 bg-gradient-to-b from-zinc-50 to-zinc-100 dark:from-zinc-900 dark:to-zinc-800">
+    <div className="flex flex-col items-center justify-center p-8 bg-gradient-to-b from-zinc-50 to-zinc-100 dark:from-zinc-900 dark:to-zinc-800">
       <main className="max-w-4xl w-full text-center">
         <div className="space-y-4">
           <h1 className="text-xl md:text-4xl font-bold text-zinc-800 dark:text-zinc-100">
@@ -105,40 +94,17 @@ export default function Home() {
                   </svg>
                   Funcionalidad para eliminar productos de la lista
                 </li>
-                <li className="flex items-start">
-                  <svg
-                    className="h-5 w-5 mr-2 text-green-500 flex-shrink-0"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  Diseño responsivo con interfaz intuitiva y modo oscuro
-                </li>
               </ul>
               <div className="flex justify-center">
-                <button
-                  onClick={() => router.push("/products")}
+                <Link
+                  href="/products"
                   className="mt-4 cursor-pointer bg-zinc-800 dark:bg-zinc-700 text-white py-2 px-6 rounded-md hover:bg-zinc-700 dark:hover:bg-zinc-600 transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-500"
                 >
                   Ver implementación
-                </button>
+                </Link>
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="text-zinc-500 dark:text-zinc-400 text-sm py-4">
-          <p>
-            Serás redirigido automáticamente a la página de productos en 10
-            segundos...
-          </p>
         </div>
       </main>
     </div>

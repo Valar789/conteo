@@ -17,7 +17,6 @@
     "@hookform/resolvers": "^3.3.4",
     "react-hot-toast": "^2.4.1",
     "date-fns": "^2.30.0"
- 
   },
   "devDependencies": {
     "typescript": "^5",
