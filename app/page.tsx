@@ -9,7 +9,7 @@ export default function Home() {
             Prueba Técnica{" "}
             <span className="text-zinc-600 dark:text-zinc-300">Conteo</span>
           </h1>
-          <p className="text-xl text-zinc-600 dark:text-zinc-300">
+          <p className="text-xl text-zinc-600 dark:text-zinc-300 mb-4">
             Desarrollador Frontend Next.js
           </p>
         </div>

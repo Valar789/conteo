@@ -12,7 +12,7 @@ interface SearchBarProps {
             placeholder="Buscar por codigo, nombre o descripción..."
             value={searchQuery}
             onChange={onSearchChange}
-            className="w-full px-4 py-1 border-b border-zinc-300 dark:border-zinc-700 focus:outline-none dark:bg-zinc-800 dark:text-white"
+            className="w-full px-4 py-1 rounded-md border-b border-zinc-300 dark:border-zinc-700 focus:outline-none dark:bg-zinc-800 dark:text-white"
           />
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +24,7 @@ interface SearchBarProps {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-zinc-400"
+            className="hidden md:block absolute right-3 top-1/2 transform -translate-y-1/2 text-zinc-400"
           >
             <circle cx="11" cy="11" r="8" />
             <path d="m21 21-4.3-4.3" />
