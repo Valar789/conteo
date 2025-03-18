@@ -5,3 +5,8 @@ export interface Product {
   quantity: number;
   creation: Date | string 
 }
+
+
+export type SortField = "code" | "name" | "quantity" | "creation";
+export type SortDirection = "asc" | "desc";
+
