@@ -43,7 +43,7 @@ export default function ProductForm({ onAddProduct }: ProductFormProps) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label htmlFor="code" className="block text-sm font-medium mb-1">
-            Código
+            Código*
           </label>
           <input
             id="code"
@@ -57,7 +57,7 @@ export default function ProductForm({ onAddProduct }: ProductFormProps) {
         </div>
         <div>
           <label htmlFor="quantity" className="block text-sm font-medium mb-1">
-            Cantidad
+            Cantidad*
           </label>
           <input
             id="quantity"
@@ -75,7 +75,7 @@ export default function ProductForm({ onAddProduct }: ProductFormProps) {
 
       <div>
         <label htmlFor="name" className="block text-sm font-medium mb-1">
-          Nombre
+          Nombre*
         </label>
         <input
           id="name"
@@ -90,7 +90,7 @@ export default function ProductForm({ onAddProduct }: ProductFormProps) {
 
       <div>
         <label htmlFor="description" className="block text-sm font-medium mb-1">
-          Descripción
+          Descripción*
         </label>
         <textarea
           id="description"
@@ -107,7 +107,7 @@ export default function ProductForm({ onAddProduct }: ProductFormProps) {
 
       <button
         type="submit"
-        className="w-full bg-zinc-900 dark:bg-zinc-700 text-white py-2 px-4 rounded-md hover:bg-zinc-800 dark:hover:bg-zinc-600 transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-500"
+        className="w-full cursor-pointer bg-zinc-900 dark:bg-zinc-700 text-white py-2 px-4 rounded-md hover:bg-zinc-500 dark:hover:bg-zinc-600 transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-500"
       >
         Agregar producto
       </button>
