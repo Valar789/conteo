@@ -16,6 +16,8 @@
 # next.js
 /.next/
 /out/
+z.js
+z.json
 
 # production
 /build
