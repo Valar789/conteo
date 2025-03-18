@@ -4,17 +4,21 @@ import { z } from "zod";
 const REQUIRED_FIELD = "Este campo es obligatorio";
 
 const productSchema = z.object({
-  code: z.number().positive("El código debe ser un número positivo"),
+  code: z
+    .number({ message: REQUIRED_FIELD })
+    .nonnegative("El código no puede ser menor que cero"),
   name: z
     .string({ message: REQUIRED_FIELD })
-    .min(2, "El nombre debe tener al menos 2 caracteres"),
+    .min(2, "El nombre debe tener al menos 2 caracteres")
+    .max(60, "El nombre no puede exceder los 60 caracteres"),
   description: z
     .string({ message: REQUIRED_FIELD })
-    .min(5, "La descripción debe tener al menos 5 caracteres"),
+    .min(5, "La descripción debe tener al menos 5 caracteres")
+    .max(255, "La descripción no puede exceder los 255 caracteres"),
   quantity: z
     .number({ message: REQUIRED_FIELD })
     .int("La cantidad debe ser un número entero")
-    .positive("La cantidad debe ser un número entero positivo"),
+    .nonnegative("La cantidad no puede ser menor que cero"),
   creation: z.date(),
 });
 
